@@ -1,0 +1,8 @@
+# Automatically migrated from legacy .beetsconfig.
+
+directory: /data/audio/Music
+plugins: chroma fetchart embedart lyrics scrub
+
+#mpdupdate:
+#    host: localhost
+#    port: 6600

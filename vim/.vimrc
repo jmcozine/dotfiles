@@ -1,0 +1,26 @@
+set nocompatible
+set autoindent
+set smartindent
+set showmatch
+set incsearch
+set ignorecase
+set smartcase
+set history=1000
+set backspace=eol,start,indent
+set ruler
+set tabstop=4
+set shiftwidth=4
+set expandtab
+"set virtualedit=all
+set background=dark
+"set vb t_vg=
+set t_Co=256
+set mouse=v
+set textwidth=79
+set formatoptions=tcrq
+set nobackup
+set nowritebackup
+set viminfo=""
+syntax on
+"let g:zenburn_high_Contrast=1
+colorscheme zenburn
