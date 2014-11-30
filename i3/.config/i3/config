@@ -149,7 +149,7 @@ bindsym $mod+r mode "resize"
 bar {
         position          top
         workspace_buttons yes
-        tray_output       DVI-0
+        tray_output       HDMI-0
         status_command    i3status
 }
 
