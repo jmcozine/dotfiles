@@ -1,7 +1,8 @@
-# Automatically migrated from legacy .beetsconfig.
-
 directory: /data/audio/Music
-plugins: chroma fetchart embedart lyrics scrub
+plugins: chroma fetchart embedart lyrics scrub replaygain mbsync
+
+replaygain:
+    backend: gstreamer
 
 #mpdupdate:
 #    host: localhost
