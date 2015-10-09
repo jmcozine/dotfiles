@@ -27,13 +27,11 @@ unsetopt beep
 
 unset MANPATH
 
-#export XMODIFIERS=@im=ibus
-#export GTK_IM_MODULE=ibus
-#export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodules.cache
 export CVS_RSH=ssh
 export EDITOR=vim
 export LESSCHARSET=utf-8
-#export TERM=screen-256color
+export TERM=screen-256color
+export GOPATH=~
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -68,10 +66,10 @@ case $TERM in
     xterm|rxvt*) precmd () { print -Pn "\e];%m\a"  } ;;
 esac
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-    . "${HOME}/.gpg-agent-info"
-    export GPG_AGENT_INFO
-    export SSH_AUTH_SOCK
-    export SSH_AGENT_PID
-    export GPG_TTY=$(tty)
-fi
+#if [ -f "${HOME}/.gpg-agent-info" ]; then
+#    . "${HOME}/.gpg-agent-info"
+#    export GPG_AGENT_INFO
+#    export SSH_AUTH_SOCK
+#    export SSH_AGENT_PID
+#    export GPG_TTY=$(tty)
+#fi
