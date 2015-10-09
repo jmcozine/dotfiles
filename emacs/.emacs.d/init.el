@@ -1,5 +1,5 @@
 ;; ~/.emacs.d/init.el
-;; Time-stamp: <2015-10-09 14:41:49 jc>
+;; Time-stamp: <2015-10-09 16:52:38 jc>
 
 (when window-system
   (menu-bar-mode -1)
@@ -25,8 +25,7 @@
 ;; themes
 (use-package zenburn-theme
   :ensure t
-  :init
-  (load-theme 'zenburn t))
+  :init (load-theme 'zenburn t))
 
 ;; defaults
 (add-hook 'before-save-hook 'time-stamp)
@@ -68,11 +67,14 @@
 
 (setq gnutls-min-prime-bits 1024)
 
-;; Go
+;; Golang
 
-(use-package go-mode-autoloads
+(use-package company-go
+  :ensure t)
+
+(use-package go-mode
   :ensure t
-  :load-path "/usr/share/emacs/site-list/go-mode"
+  :init (require 'go-mode-autoloads)
   :config
   (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
@@ -82,10 +84,10 @@
                             (company-mode))))
 
 ;; Word Count
-(use-package wc-mode)
+(use-package wc-mode
+  :ensure t)
 
 ;; Magit
 (use-package magit
   :ensure t
-  :config
-  (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
+  :config (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
