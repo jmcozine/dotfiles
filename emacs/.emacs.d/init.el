@@ -1,5 +1,5 @@
 ;; ~/.emacs.d/init.el
-;; Time-stamp: <2015-10-10 14:15:06 jc>
+;; Time-stamp: <2015-10-10 14:36:28 jc>
 
 (when window-system
   (menu-bar-mode -1)
@@ -57,6 +57,9 @@
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
+
+(use-package ido
+  :config (ido-mode t))
 
 ;; PKGBUILD
 
