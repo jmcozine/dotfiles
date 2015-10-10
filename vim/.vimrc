@@ -24,3 +24,5 @@ set viminfo=""
 syntax on
 "let g:zenburn_high_Contrast=1
 colorscheme zenburn
+set laststatus=2
+set showtabline=2
