@@ -1,5 +1,5 @@
 ;; ~/.emacs.d/init.el
-;; Time-stamp: <2015-10-09 16:52:38 jc>
+;; Time-stamp: <2015-10-10 14:15:06 jc>
 
 (when window-system
   (menu-bar-mode -1)
@@ -90,4 +90,5 @@
 ;; Magit
 (use-package magit
   :ensure t
+  :bind ("C-x g" . magit-status)
   :config (define-key magit-status-mode-map (kbd "q") 'magit-quit-session))
