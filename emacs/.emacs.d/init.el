@@ -12,7 +12,9 @@
 
 ;; packages
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(setq package-archive '(("gnu" . "https://elpa.gnu.org/packages/")
+                        ("melpa" . "https://mepla.org/packages/")))
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
