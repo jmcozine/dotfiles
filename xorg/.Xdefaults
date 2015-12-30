@@ -1,0 +1,55 @@
+! rxvt-unicode
+! URxvt.buffered:		true
+! URxvt.background:	black
+! URxvt.foreground:	grey75
+! URxvt.cursorColor:	grey75
+! URxvt.underlineColor:	grey75
+URxvt.font:		xft:Terminus:pixelsize=12:antialias=false
+URxvt.boldFont:		xft:Terminus:bold:pixelsize=12:antialias=false
+! URxvt.perl-ext-common:	default,tabbed
+! URxvt.transparent:	true
+! URxvt.shading:		30
+URxvt.scrollBar:	false
+! URxvt.depth:		32
+URxvt.urgentOnBell:	True
+
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      /usr/bin/firefox
+URxvt.matcher.button:   1 
+
+
+URxvt*tintColor: gray30
+URxvt*background: #000010
+URxvt*foreground: Wheat
+URxvt*color0: #000000
+URxvt*color1: #9e1828
+URxvt*color2: #aece92
+URxvt*color3: #968a38
+URxvt*color4: #414171
+URxvt*color5: #963c59
+URxvt*color6: #418179
+URxvt*color7: #bebebe
+URxvt*color8: #666666
+URxvt*color9: #cf6171
+URxvt*color10: #c5f779
+URxvt*color11: #fff796
+URxvt*color12: #4186be
+URxvt*color13: #cf9ebe
+URxvt*color14: #71bebe
+URxvt*color15: #ffffff
+
+! emacs
+Emacs.font: Terminus-12
+!Emacs.background: black
+!Emacs.foreground: grey75
+Emacs.toolBar: 0
+Emacs.menuBar: 0
+Emacs.verticalScrollBars: 0
+
+! fonts
+Xft.autohint:   0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting:    1
+Xft.antialias:  1
+Xft.rgba:       rgb
