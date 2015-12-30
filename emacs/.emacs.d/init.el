@@ -1,5 +1,5 @@
 ;; ~/.emacs.d/init.el
-;; Time-stamp: <2015-10-10 15:45:11 jc>
+;; Time-stamp: <2015-12-29 20:53:08 jc>
 
 (when window-system
   (menu-bar-mode -1)
@@ -12,7 +12,9 @@
 
 ;; packages
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(setq package-archive '(("gnu" . "https://elpa.gnu.org/packages/")
+                        ("melpa" . "https://mepla.org/packages/")))
+(setq package-enable-at-startup nil)
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -53,13 +55,9 @@
 
 ;; list buffers
 
-(defalias 'list-buffers 'ibuffer)
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
-
-(use-package ido
-  :config (ido-mode t))
 
 ;; PKGBUILD
 
@@ -94,3 +92,11 @@
 (use-package magit
   :ensure t
   :bind ("C-x g" . magit-status))
+
+;; Helm
+(use-package helm
+  :ensure t
+  :config
+  (require 'helm-config)
+  (helm-mode)
+  (bind-key "<tab>" 'helm-execute-persistent-action helm-map))
