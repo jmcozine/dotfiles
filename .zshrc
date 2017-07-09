@@ -8,7 +8,6 @@ SAVEHIST=1000
 autoload -U compinit
 compinit
 
-setopt appendhistory
 setopt autocd
 setopt correct
 setopt extendedglob
@@ -16,6 +15,7 @@ setopt nonotify
 setopt nocheckjobs
 setopt nohup
 setopt cshnullglob
+setopt appendhistory
 setopt incappendhistory
 setopt sharehistory
 setopt histignorealldups
@@ -25,13 +25,12 @@ setopt histnofunctions
 
 unsetopt beep
 
-unset MANPATH
-
 export CVS_RSH=ssh
 export EDITOR=vim
 export LESSCHARSET=utf-8
 export TERM=screen-256color
 export GOPATH=~
+export GPG_TTY=$(tty)
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
@@ -57,19 +56,8 @@ bindkey '\e[4~' end-of-line
 bindkey '^w' kill-region
 bindkey '^u' universal-argument
 
-#if [[ $TERM == linux ]]; then
-#    setterm -blength 0
-#    setterm -blank
-#fi
 case $TERM in
     screen*)     precmd () { print -Pn "\e]2;%m\a" } ;;
     xterm|rxvt*) precmd () { print -Pn "\e];%m\a"  } ;;
 esac
 
-#if [ -f "${HOME}/.gpg-agent-info" ]; then
-#    . "${HOME}/.gpg-agent-info"
-#    export GPG_AGENT_INFO
-#    export SSH_AUTH_SOCK
-#    export SSH_AGENT_PID
-#    export GPG_TTY=$(tty)
-#fi
