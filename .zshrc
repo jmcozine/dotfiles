@@ -57,8 +57,3 @@ bindkey '\e[4~' end-of-line
 bindkey '^w' kill-region
 bindkey '^u' universal-argument
 
-case $TERM in
-    screen*)     precmd () { print -Pn "\e]2;%m\a" } ;;
-    xterm|rxvt*) precmd () { print -Pn "\e];%m\a"  } ;;
-esac
-
