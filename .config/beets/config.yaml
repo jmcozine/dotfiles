@@ -1,4 +1,4 @@
-directory: /data/audio/Music
+directory: /home/jc/Music
 plugins: chroma fetchart embedart lyrics scrub replaygain mbsync
 
 replaygain:

@@ -1,5 +1,5 @@
 ;; ~/.emacs.d/init.el
-;; Time-stamp: <2017-07-04 22:17:57 jc>
+;; Time-stamp: <2019-02-06 12:19:19 jc>
 
 (when window-system
   (menu-bar-mode -1)
@@ -23,7 +23,7 @@
 
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)
+;(require 'diminish)
 (require 'bind-key)
 
 ;; themes
@@ -86,7 +86,9 @@
   (add-hook 'before-save-hook 'gofmt-before-save)
   (add-hook 'go-mode-hook (lambda ()
                             (set (make-local-variable 'company-backends) '(company-go))
-                            (company-mode))))
+                            (company-mode)
+                            (setq tab-width 4)
+                            (setq indent-tabs-mode 1))))
 
 ;; Word Count
 (use-package wc-mode
@@ -111,38 +113,36 @@
                 helm-ff-file-name-history-use-recentf t))
 
 ;; Twittering
-;; (use-package twittering-mode
-;;   :config (setq twittering-use-master-password t))
-
-;; Org-journal
-(use-package org-journal
-  :ensure t
-  :config (setq org-journal-enable-encryption nil))
+(use-package twittering-mode
+  :config (setq twittering-use-master-password t))
 
 (add-hook 'org-shiftup-final-hook 'windmove-up)
 (add-hook 'org-shiftleft-final-hook 'windmove-left)
 (add-hook 'org-shiftdown-final-hook 'windmove-down)
 (add-hook 'org-shiftright-final-hook 'windmove-right)
 
+;; Org-journal
+;; (use-package org-journal
+;;   :ensure t
+;;   :config (setq org-journal-enable-encryption nil))
+
+;; ledger
+(use-package ledger-mode
+  :ensure t
+  :mode "\\.dat\\'")
+
 ;; tramp
 (setq tramp-default-method "ssh")
 (eval-after-load 'tramp '(setenv "SHELL" "/bin/bash"))
 
-;;(add-to-list 'load-path "/home/jc/.emacs.d/site-lisp")
-;;(require 'beancount)
-;;(add-to-list 'auto-mode-alist '("\\.beancount\\'" . beancount-mode))
+(add-to-list 'load-path "/home/jc/.emacs.d/site-lisp")
+(require 'beancount)
+(add-to-list 'auto-mode-alist '("\\.beancount\\'" . beancount-mode))
+
+(setq org-element-use-cache nil)
 
 ;; quote region
 (global-set-key (kbd "M-\"") 'insert-pair)
-
-(use-package elfeed
-  :ensure t)
-
-(use-package elfeed-org
-  :ensure t
-  :config
-  (elfeed-org)
-  (setq rmh-elfeed-org-files (list "~/.emacs.d/elfeed.org")))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -151,7 +151,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (elfeed-org elfeed zenburn-theme wc-mode use-package org-journal magit ledger-mode helm company-go))))
+    (company-jedi org-mode powershell pass helm-pass zenburn-theme wc-mode use-package twittering-mode pinentry org-journal org magit ledger-mode helm-go-package helm-emms flycheck company-go auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
