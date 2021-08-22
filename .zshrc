@@ -47,8 +47,9 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-alias ls='ls -v --color=auto'
 path=(/usr/bin /usr/bin/core_perl /usr/local/bin ~/bin)
+alias ls='ls -v --color=auto'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 umask 022
 
@@ -62,9 +63,4 @@ bindkey '\e[3~' delete-char
 bindkey '\e[4~' end-of-line
 bindkey '^w' kill-region
 bindkey '^u' universal-argument
-
-case $TERM in
-    screen*)     precmd () { print -Pn "\e]2;%m\a" } ;;
-    xterm|rxvt*) precmd () { print -Pn "\e];%m\a"  } ;;
-esac
 
