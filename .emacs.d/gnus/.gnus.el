@@ -1,5 +1,7 @@
 (setq gnus-select-method '(nntp "news.gmane.org"))
 
+;(setq gnus-secondary-select-methods '((nntp "news.gwene.org")))
+
 (setq gnus-save-newsrc-file nil
       gnus-read-newsrc-file nil
       gnus-save-killed-list nil
