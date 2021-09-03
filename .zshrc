@@ -64,3 +64,4 @@ bindkey '\e[4~' end-of-line
 bindkey '^w' kill-region
 bindkey '^u' universal-argument
 
+[[ -z $TMUX ]] && tmux -u new -A -s foo
