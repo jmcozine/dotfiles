@@ -19,3 +19,6 @@ set relativenumber	" line numbers relative to cursor
 set path+=**		" include subdirectories when finding files
 set wildmenu		" menu for tab completion in command-line mode
 filetype plugin indent on	" omni completion based on filetype
+set laststatus=2    " always display the statusline in all windows
+set showtabline=2   " always display the tabline, even if there is only one tab
+set noshowmode      " hide the default mode text
