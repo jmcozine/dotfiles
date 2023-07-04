@@ -6,6 +6,7 @@
 
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
+(setq visible-bell t)
 
 ;; packages
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
