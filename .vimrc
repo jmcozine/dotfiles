@@ -22,3 +22,4 @@ filetype plugin indent on	" omni completion based on filetype
 set laststatus=2    " always display the statusline in all windows
 set showtabline=2   " always display the tabline, even if there is only one tab
 set noshowmode      " hide the default mode text
+set autoindent

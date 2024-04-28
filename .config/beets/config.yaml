@@ -1,5 +1,6 @@
 directory: /home/jc/Music
-plugins: chroma fetchart embedart lyrics scrub replaygain mbsync
+#plugins: chroma fetchart embedart lyrics scrub replaygain mbsync
+plugins: fetchart embedart scrub replaygain mbsync
 
 replaygain:
     backend: gstreamer

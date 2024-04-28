@@ -89,8 +89,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-export-backends '(ascii html icalendar latex md odt))
  '(package-selected-packages
-   '(zenburn-theme wc-mode use-package s org-journal magit-popup magit ledger-mode helm diminish company-go)))
+   '(su systemd tmux-pane tmux-mode zenburn-theme wc-mode use-package s org-journal magit-popup magit ledger-mode helm diminish company-go)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
